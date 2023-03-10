@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     highlight: {
       theme: {
         // Default theme (same as single string)
-        default: "material-ocean",
+        default: "dracula",
       },
     },
   },

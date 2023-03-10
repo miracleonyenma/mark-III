@@ -26,7 +26,7 @@ const toggleTheme = () => {
 };
 </script>
 <template>
-  <button class="relative cta py-2 z-20" @click="toggleTheme">
+  <button class="theme-btn cta" @click="toggleTheme">
     <span v-if="theme === 'dark'">
       <MoonIcon class="icon" />
     </span>
@@ -35,3 +35,8 @@ const toggleTheme = () => {
     </span>
   </button>
 </template>
+<style scoped>
+.theme-btn {
+  @apply relative py-2 !bg-white/10 dark:!bg-space-cadet-800/10 z-20;
+}
+</style>

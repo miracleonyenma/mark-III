@@ -11,6 +11,9 @@ const specialGreeting = useSpecialGreeting();
 
 const metaTitle = ref(specialGreeting || "Miracleio");
 
+// console.log({isChristmas});
+
+
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} | Miracleio` : "Miracleio";
@@ -80,7 +83,7 @@ useHead({
     {
       rel: "icon",
       type: "image/png",
-      href: isChristmas ? "/logo-christmas.png" : "/logo.png",
+      href: isChristmas.value ? "/logo-christmas.png" : "/mio-logo.png",
     },
   ],
   htmlAttrs: {

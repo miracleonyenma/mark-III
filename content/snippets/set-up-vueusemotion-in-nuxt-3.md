@@ -1,4 +1,8 @@
-# Set up @vueuse/motion in Nuxt 3
+---
+title: Set up @vueuse/motion in Nuxt 3
+tags: [Nuxt 3, vueuse/motion]
+---
+
 
 [`@vueuse/motion`](https://motion.vueuse.org/) is a Vue Composable available via [VueUse](https://vueuse.org/) that helps add animations to Vue applications with a simple yet powerful API.
 

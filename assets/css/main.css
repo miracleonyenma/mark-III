@@ -9,16 +9,24 @@ html {
 }
 
 body {
-  @apply bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-100;
+  @apply bg-space-cadet-50 dark:bg-space-cadet-900 text-space-cadet-800 dark:text-space-cadet-100;
 }
 
 @layer components {
   .icon {
-    @apply shrink-0 w-5 h-5 text-slate-800 dark:text-slate-50;
+    @apply shrink-0 w-5 h-5 text-space-cadet-800 dark:text-space-cadet-50;
   }
 
   .cta {
-    @apply p-1.5 px-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg;
+    @apply p-1.5 px-2 bg-space-cadet-100 dark:bg-space-cadet-800 border border-space-cadet-200 dark:border-space-cadet-700 cursor-pointer rounded-3xl;
+  }
+
+  .cta:has(.icon) {
+    @apply flex items-center;
+  }
+
+  .cta .text {
+    @apply px-2;
   }
 
   .img-cont > img {
@@ -26,6 +34,11 @@ body {
   }
 
   /* site */
+
+  .site-main {
+    @apply min-h-[calc(100vh-20rem)];
+  }
+
   .site-section {
     @apply py-12;
   }
@@ -45,7 +58,7 @@ body {
   }
 
   .articles-list-section .articles-list {
-    @apply grid lg:grid-cols-1 gap-6 lg:gap-6 w-full max-w-4xl m-auto;
+    @apply grid lg:grid-cols-1 w-full max-w-4xl m-auto;
   }
 
   .tags {
@@ -53,6 +66,6 @@ body {
   }
 
   .tags .tag {
-    @apply font-heading font-semibold text-xs px-2 py-1 bg-slate-100 border border-slate-200 hover:bg-slate-200  dark:bg-slate-700 dark:border-slate-600 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-100 rounded-lg cursor-pointer;
+    @apply font-heading font-semibold text-xs px-3 py-1 bg-vivid-indigo-100 text-vivid-indigo-500 dark:text-vivid-indigo-100 border border-vivid-indigo-200 dark:bg-vivid-indigo-700 dark:border-vivid-indigo-600  rounded-3xl cursor-pointer;
   }
 }
