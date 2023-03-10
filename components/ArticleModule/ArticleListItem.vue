@@ -42,7 +42,8 @@ const articleItemMotionInstance = useMotion(articleItem, {
 </template>
 <style scoped>
 .article-item .article-item-header {
-  @apply flex flex-col gap-2.5 p-4 lg:p-6;
-  /* @apply bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl; */
+  @apply flex flex-col gap-2.5 p-4 lg:p-6 border border-transparent rounded-3xl;
+  @apply hover:bg-space-cadet-100 hover:border-space-cadet-200 dark:hover:bg-space-cadet-800 dark:hover:border-space-cadet-700;
+  /* @apply bg-white dark:bg-space-cadet-800 border border-space-cadet-100 dark:border-space-cadet-700 rounded-xl; */
 }
 </style>

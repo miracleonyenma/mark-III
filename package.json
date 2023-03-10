@@ -8,11 +8,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@tailwindcss/container-queries": "^0.1.0",
     "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/typography": "^0.5.8",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/request": "^2.48.8",
-    "@vite-pwa/nuxt": "^0.0.6",
+    "@vite-pwa/nuxt": "^0.0.7",
     "@vueuse/core": "^9.13.0",
     "@vueuse/nuxt": "^9.13.0",
     "autoprefixer": "^10.4.13",
@@ -21,11 +20,12 @@
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.13",
-    "@nuxt/content": "^2.4.3",
+    "@heroicons/vue": "^2.0.16",
+    "@nuxt/content": "^2.5.2",
     "@vueuse/motion": "^2.0.0-beta.27",
+    "query-string": "^8.1.0",
     "reading-time": "^1.5.0",
     "request": "^2.88.2",
-    "simple-git": "^3.15.1"
+    "simple-git": "^3.17.0"
   }
 }

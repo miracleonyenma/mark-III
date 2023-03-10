@@ -72,6 +72,6 @@ console.log({ data: data.value, error: error.value });
 }
 
 .article-hr {
-  @apply border border-slate-200 dark:border-slate-800 max-w-5xl m-auto;
+  @apply border border-space-cadet-200 dark:border-space-cadet-800 max-w-5xl m-auto;
 }
 </style>

@@ -24,7 +24,7 @@ const heroContentMotionInstance = useMotion(heroContent, {
 });
 </script>
 <template>
-  <main>
+  <main class="site-main">
     <header class="site-hero">
       <div class="wrapper">
         <div class="img-cont hero-img-cont">
@@ -54,7 +54,7 @@ const heroContentMotionInstance = useMotion(heroContent, {
 </template>
 <style scoped>
 .site-hero {
-  @apply relative p-8 md:mt-32;
+  @apply relative p-8 py-24 md:mt-32;
 }
 
 .site-hero > .wrapper {
@@ -67,7 +67,7 @@ const heroContentMotionInstance = useMotion(heroContent, {
 
 .hero-img-cont > img {
   @apply rounded-3xl;
-  @apply ring-8 ring-blue-ryb dark:ring-han-purple ring-offset-8 ring-offset-slate-50 dark:ring-offset-slate-900;
+  @apply ring-8 ring-blue-ryb dark:ring-han-purple ring-offset-8 ring-offset-space-cadet-50 dark:ring-offset-space-cadet-900;
 }
 
 .site-hero .hero-content {

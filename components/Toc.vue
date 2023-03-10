@@ -36,7 +36,7 @@ const flattenLinks = (links: any[]) => {
 </script>
 
 <template>
-  <button @click="inactive = !inactive" class="cta mb-4 lg:hidden" :class="{'mb-0': inactive}">
+  <button @click="inactive = !inactive" class="lg:!hidden cta mb-4 " :class="{'mb-0': inactive}">
     <ListBulletIcon class="icon" />
   </button>
 
@@ -63,7 +63,7 @@ const flattenLinks = (links: any[]) => {
 
 <style scoped>
 .toc {
-  @apply p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg;
+  @apply p-4 bg-white dark:bg-space-cadet-800 border border-space-cadet-200 dark:border-space-cadet-700 rounded-3xl;
   @apply max-h-[calc(100vh-9rem)] overflow-auto;
   @apply transition-all;
 }
@@ -75,13 +75,13 @@ const flattenLinks = (links: any[]) => {
 }
 
 .toc-header {
-  @apply pb-4 mb-4 border-b border-slate-200 dark:border-slate-700;
+  @apply pb-4 mb-4 border-b border-space-cadet-200 dark:border-space-cadet-700;
 }
 .toc-links {
   @apply flex flex-col gap-2 px-2;
 }
 .toc-link {
-  @apply text-slate-500 dark:text-slate-100 hover:underline;
+  @apply text-space-cadet-500 dark:text-space-cadet-100 hover:underline;
 }
 .toc-link._3 {
   @apply pl-3;

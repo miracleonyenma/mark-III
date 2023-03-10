@@ -30,7 +30,7 @@ watch(
   <div class="site-nav-action-cont">
     <button
       @click="toggleNav"
-      class="site-nav-btn cta bg-slate-50 dark:bg-slate-900 py-2 shadow-lg"
+      class="site-nav-btn cta bg-space-cadet-50 dark:bg-space-cadet-900 py-2 shadow-lg"
     >
       <Bars3Icon class="icon w-6 h-6" />
     </button>
@@ -38,7 +38,7 @@ watch(
 </template>
 <style scoped>
 .site-nav {
-  @apply fixed top-0 left-0 w-full h-screen bg-slate-50 dark:bg-slate-800;
+  @apply fixed top-0 left-0 w-full h-screen bg-space-cadet-50 dark:bg-space-cadet-800 lg:bg-transparent lg:dark:bg-transparent;
   @apply lg:relative lg:w-auto lg:h-auto lg:bg-transparent;
 
   @apply invisible opacity-0 pointer-events-none;
@@ -64,11 +64,11 @@ watch(
 }
 
 .link > a {
-  @apply text-slate-400 hover:text-slate-800 dark:text-slate-500 dark:hover:text-slate-100;
+  @apply text-space-cadet-500 hover:text-space-cadet-800 dark:text-space-cadet-400 dark:hover:text-space-cadet-100;
 }
 
 .link > a.router-link-active {
-  @apply text-slate-800 dark:text-slate-100;
+  @apply text-space-cadet-800 dark:text-space-cadet-100;
 }
 
 .site-nav-action-cont {
