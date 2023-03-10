@@ -142,6 +142,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .spotify-now {
   @apply w-fit bg-space-cadet-100 dark:bg-space-cadet-800 border border-slate-200 dark:border-space-cadet-700 max-w-md rounded-full;
+  @apply overflow-auto;
 }
 .spotify-now > .wrapper {
   @apply flex items-center p-3 h-full;

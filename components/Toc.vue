@@ -36,7 +36,7 @@ const flattenLinks = (links: any[]) => {
 </script>
 
 <template>
-  <button @click="inactive = !inactive" class="cta mb-4 lg:hidden" :class="{'mb-0': inactive}">
+  <button @click="inactive = !inactive" class="lg:!hidden cta mb-4 " :class="{'mb-0': inactive}">
     <ListBulletIcon class="icon" />
   </button>
 
@@ -63,7 +63,7 @@ const flattenLinks = (links: any[]) => {
 
 <style scoped>
 .toc {
-  @apply p-4 bg-white dark:bg-space-cadet-800 border border-space-cadet-200 dark:border-space-cadet-700 rounded-lg;
+  @apply p-4 bg-white dark:bg-space-cadet-800 border border-space-cadet-200 dark:border-space-cadet-700 rounded-3xl;
   @apply max-h-[calc(100vh-9rem)] overflow-auto;
   @apply transition-all;
 }

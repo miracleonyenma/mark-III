@@ -3,7 +3,7 @@
     <div class="wrapper">
       <section class="top-section">
         <div class="site-info">
-          <SiteLogo class="active mb-2">
+          <SiteLogo class="active mb-2 !z-0">
             <template #logo-text>
               <h1 class="font-heading font-bold">Miracleio</h1>
             </template>
