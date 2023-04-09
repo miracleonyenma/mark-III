@@ -1,12 +1,12 @@
 <script setup>
 import { useMotion } from "@vueuse/motion";
-import {
-  PhTwitterLogo,
-  PhLinkedinLogo,
-  PhGithubLogo,
-  PhDribbbleLogo,
-  PhReadCvLogo,
-} from "@phosphor-icons/vue";
+// import {
+//   PhTwitterLogo,
+//   PhLinkedinLogo,
+//   PhGithubLogo,
+//   PhDribbbleLogo,
+//   PhReadCvLogo,
+// } from "@phosphor-icons/vue";
 const specialGreeting = useSpecialGreeting();
 
 const heroContent = ref();
@@ -34,29 +34,34 @@ const socialLinks = [
   {
     name: "Twitter",
     url: "https://twitter.com/miracleio",
-    icon: PhTwitterLogo,
+    // icon: PhTwitterLogo,
+    text: "TW",
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/miracleio",
-    icon: PhLinkedinLogo,
+    // icon: PhLinkedinLogo,
+    text: "LN",
   },
   {
     name: "GitHub",
     url: "https://github.com/miracleonyenma",
-    icon: PhGithubLogo,
+    // icon: PhGithubLogo,
+    text: "GH",
   },
 
   {
     name: "Dribbble",
     url: "https://dribbble.com/miracleio",
-    icon: PhDribbbleLogo,
+    // icon: PhDribbbleLogo,
+    text: "DR",
   },
 
   {
     name: "My Resume",
     url: "https://docs.google.com/document/d/1jqlXD4OjNMssz_IBJOe7NuKp8uQaYRs5_3XK-6_lf4Y/edit?usp=sharing",
-    icon: PhReadCvLogo,
+    // icon: PhReadCvLogo,
+    text: "CV",
   },
 ];
 </script>
@@ -92,8 +97,14 @@ const socialLinks = [
               class="link-item"
               :style="{ transitionDuration: (index + 1) * 0.5 + 's' }"
             >
-              <NuxtLink :to="link.url" :target="link.name" :title="link.name" class="social-link">
-                <component :is="link.icon" weight="fill" class="icon w-8 h-8" />
+              <NuxtLink
+                :to="link.url"
+                :target="link.name"
+                :title="link.name"
+                class="social-link"
+              >
+                <!-- <component :is="link.icon" weight="fill" class="icon w-8 h-8" /> -->
+                <span>{{ link.text }}</span>
               </NuxtLink>
             </li>
           </ul>
@@ -131,6 +142,10 @@ const socialLinks = [
 .socials-links .link-item {
   @apply inline-block p-3 rounded-full;
   @apply transition-all;
+}
+
+.socials-links .link-item:has(span) {
+  @apply flex items-center justify-center w-12 h-12;
 }
 
 .socials-links:hover .link-item {
