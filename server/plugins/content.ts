@@ -216,19 +216,54 @@ const generateCovers = async (file: {
 };
 
 export default defineNitroPlugin((nitroApp) => {
-  let stats = {};
+  // let stats: { text: string; minutes: number; time: number; words: number } = {
+  //   text: "",
+  //   minutes: 0,
+  //   time: 0,
+  //   words: 0,
+  // };
+
+  const readingTimeStats: {
+    key?: string;
+    stats?: { text: string; minutes: number; time: number; words: number };
+  }[] = [];
 
   nitroApp.hooks.hook("content:file:beforeParse", async (file) => {
     if (file._id.endsWith(".md")) {
-      stats = readingTime(file.body);
+      const fileID = file._id;
+
+      console.log({
+        fileID,
+      });
+
+      const stats = readingTime(file.body);
       file.readingTime = stats;
-      // console.log({ readingTime: file.readingTime, stats });
+
+      console.log("before parse ==============>", {
+        stats,
+        "file.readingTime": file.readingTime,
+      });
+
+      readingTimeStats.push({
+        key: fileID,
+        stats,
+      });
+
+      console.log({ readingTimeStats });
     }
   });
 
   nitroApp.hooks.hook("content:file:afterParse", async (file) => {
-    if (file._id.endsWith(".md")) {
-      file.readingTime = stats;
+    if (
+      file._id.endsWith(".md") &&
+      (file._file.includes("articles") || file._file.includes("snippets"))
+    ) {
+      const readingTimeStat = readingTimeStats.find(
+        (stat) => stat.key === file._id
+      );
+
+      file.readingTime = readingTimeStat?.stats;
+      console.log("reading time ========>", file.readingTime);
 
       const filePath = `./content/${file._file}`;
 
