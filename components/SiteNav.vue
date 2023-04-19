@@ -55,7 +55,7 @@ watch(
 
 .links {
   @apply flex flex-col gap-4 text-right;
-  @apply lg:flex lg:flex-row lg:gap-4 lg:text-left;
+  @apply lg:flex lg:flex-row lg:gap-4 lg:px-6 lg:text-left;
 }
 
 .link {

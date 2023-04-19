@@ -1,4 +1,11 @@
 <script setup>
+import {
+  ArrowRightIcon,
+  ArrowUpRightIcon,
+  CommandLineIcon,
+  PencilIcon,
+  SwatchIcon,
+} from "@heroicons/vue/24/solid";
 import { useMotion } from "@vueuse/motion";
 // import {
 //   PhTwitterLogo,
@@ -64,6 +71,24 @@ const socialLinks = [
     text: "CV",
   },
 ];
+
+const workCategories = [
+  {
+    name: "Development",
+    description:
+      "While I mostly work on front end projects I also build fullstack applications using the best tools at my disposal.",
+  },
+  {
+    name: "Design",
+    description:
+      "While I mostly work on front end projects I also build fullstack applications using the best tools at my disposal.",
+  },
+  {
+    name: "Writing",
+    description:
+      "While I mostly work on front end projects I also build fullstack applications using the best tools at my disposal.",
+  },
+];
 </script>
 <template>
   <main class="site-main">
@@ -111,6 +136,67 @@ const socialLinks = [
         </div>
       </div>
     </header>
+    <div class="site-section work-section">
+      <div class="wrapper">
+        <header class="site-section-header">
+          <div class="wrapper">
+            <h2 class="pre-title">My Work</h2>
+            <h3 class="title">What I do</h3>
+            <p class="text">Here are the major areas my work spans across</p>
+          </div>
+        </header>
+
+        <ContentList
+          path="/work"
+          :query="{
+            only: ['title', 'description', '_path', '_id'],
+            where: [{ _id: { $contains: 'index' } }],
+          }"
+        >
+          <!-- Default list slot -->
+          <template v-slot="{ list }">
+            <ul class="work-category-list">
+              <li
+                v-for="work in list"
+                :key="work._path"
+                class="work-category-item"
+              >
+                <NuxtLink :to="work._path">
+                  <article class="work-category">
+                    <header class="work-category-heading">
+                      <div class="icon-cont mb-4">
+                        <SwatchIcon
+                          v-if="work.title == 'Design'"
+                          class="icon !w-12 !h-12"
+                        />
+                        <CommandLineIcon
+                          v-else-if="work.title == 'Development'"
+                          class="icon !w-12 !h-12"
+                        />
+                        <PencilIcon
+                          v-else-if="work.title == 'Technical Writing'"
+                          class="icon !w-12 !h-12"
+                        />
+                      </div>
+                      <h3 class="caption">{{ work?.title }}</h3>
+                      <p class="description">
+                        {{ work?.description }}
+                      </p>
+                    </header>
+                    <footer class="work-category-footer">
+                      <button class="flex justify-between w-full">
+                        <span class="text"> More </span>
+                        <ArrowUpRightIcon class="icon w-6 h-6" />
+                      </button>
+                    </footer>
+                  </article>
+                </NuxtLink>
+              </li>
+            </ul>
+          </template>
+        </ContentList>
+      </div>
+    </div>
   </main>
 </template>
 <style scoped>
@@ -154,5 +240,46 @@ const socialLinks = [
 
 .link-item:hover .icon {
   @apply transition transform scale-110;
+}
+
+/* WORK SECTION */
+.work-section {
+}
+
+.work-category-list {
+  @apply grid lg:grid-cols-3 gap-0;
+}
+
+/* .work-category-item {
+  @apply border-x border-b  first-of-type:border typ:border-b border-space-cadet-200;
+  @apply lg:border-x-0 lg:border-y;
+} */
+
+.work-category-item {
+  @apply border-space-cadet-200 dark:border-space-cadet-800 border-x border-t overflow-hidden;
+  @apply lg:border-l lg:border-y lg:border-r-0;
+}
+
+.work-category-item:first-of-type {
+  @apply border border-b-0 rounded-t-3xl;
+  @apply lg:border-b lg:border-r-0 lg:rounded-l-3xl lg:rounded-r-none;
+}
+
+.work-category-item:nth-of-type(n + 3) {
+  @apply border-b border-t rounded-b-3xl;
+  @apply lg:border lg:rounded-l-none lg:rounded-r-3xl;
+}
+
+.work-category {
+  @apply flex flex-col justify-between gap-8 h-full p-6 bg-white dark:bg-space-cadet-900;
+  @apply hover:bg-space-cadet-50 dark:hover:bg-space-cadet-800;
+}
+
+.work-category-heading {
+  @apply flex flex-col gap-2;
+}
+
+.work-category .caption {
+  @apply font-heading font-semibold text-2xl;
 }
 </style>

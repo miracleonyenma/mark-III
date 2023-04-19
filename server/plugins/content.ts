@@ -232,17 +232,8 @@ export default defineNitroPlugin((nitroApp) => {
     if (file._id.endsWith(".md")) {
       const fileID = file._id;
 
-      console.log({
-        fileID,
-      });
-
       const stats = readingTime(file.body);
       file.readingTime = stats;
-
-      console.log("before parse ==============>", {
-        stats,
-        "file.readingTime": file.readingTime,
-      });
 
       readingTimeStats.push({
         key: fileID,

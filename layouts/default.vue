@@ -1,7 +1,9 @@
 <template>
   <SiteHeader>
     <SiteNav />
-    <ThemeButton />
+    <template #outside-wrapper>
+      <ThemeButton />
+    </template>
   </SiteHeader>
   <slot />
   <div id="bottom-of-page"></div>

@@ -37,6 +37,7 @@ const toggleTheme = () => {
 </template>
 <style scoped>
 .theme-btn {
-  @apply relative py-2 !bg-white/10 dark:!bg-space-cadet-800/10 z-20;
+  @apply relative p-3 h-fit !bg-white/70 dark:!bg-space-cadet-800/70 border-space-cadet-200/70 dark:border-space-cadet-700/70 mr-auto z-20;
+  @apply lg:backdrop-blur-md bg-clip-padding shadow-xl shadow-space-cadet-300/10 dark:shadow-none;
 }
 </style>
