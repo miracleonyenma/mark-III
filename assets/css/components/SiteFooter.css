@@ -1,5 +1,5 @@
 .links-group {
-  @apply grid grid-cols-3 bg-space-cadet-100 dark:bg-space-cadet-800 border border-space-cadet-200 dark:border-space-cadet-700 p-8 rounded-3xl;
+  @apply grid grid-cols-3 bg-space-cadet-50 dark:bg-space-cadet-800 border border-space-cadet-200 dark:border-space-cadet-700 p-8 rounded-3xl;
 }
 .links-group .heading {
   @apply font-semibold font-heading text-lg mb-2;

@@ -68,7 +68,7 @@
 <style scoped>
 @import url("~/assets/css/components/SiteFooter.css");
 .site-footer {
-  @apply bg-space-cadet-100 dark:bg-space-cadet-800 border-t border-space-cadet-200 dark:border-space-cadet-700;
+  @apply bg-space-cadet-50 dark:bg-space-cadet-800 border-t border-space-cadet-200 dark:border-space-cadet-700;
 }
 .site-footer > .wrapper {
   @apply flex flex-col gap-4 lg:gap-8;

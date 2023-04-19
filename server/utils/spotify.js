@@ -21,7 +21,7 @@ const getAccessToken = async () => {
     const data = await res.json();
     return data.access_token;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
 
     return null;
   }
@@ -42,7 +42,7 @@ export const getNowPlaying = async () => {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.error("getNowPlayingError", error);
+    // console.error("getNowPlayingError", error);
 
     throw error;
   }

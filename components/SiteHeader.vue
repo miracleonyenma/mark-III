@@ -3,8 +3,6 @@ const a = ref(1);
 </script>
 <template>
   <header class="site-header">
-    <slot name="outside-wrapper"></slot>
-
     <div class="wrapper">
       <NuxtLink to="/">
         <SiteLogo>
@@ -17,16 +15,17 @@ const a = ref(1);
         <slot></slot>
       </div>
     </div>
+    <slot name="outside-wrapper"></slot>
   </header>
 </template>
 <style scoped>
 .site-header {
-  @apply sticky lg:fixed top-0 left-0 w-full p-4 z-20;
+  @apply sticky lg:fixed top-0 left-0 flex items-center gap-4 w-full p-4 z-20;
 }
 
 .site-header > .wrapper {
-  @apply flex items-center justify-between gap-4 p-3 bg-white lg:bg-white/70 dark:bg-space-cadet-800 lg:dark:bg-space-cadet-800/90  border border-space-cadet-100/70 dark:border-space-cadet-700/70 rounded-full max-w-6xl m-auto;
-  @apply lg:backdrop-blur-md bg-clip-padding;
+  @apply grow flex items-center justify-between gap-4 p-3 bg-white lg:bg-white/70 dark:bg-space-cadet-800 lg:dark:bg-space-cadet-800/90  border border-space-cadet-200/70 dark:border-space-cadet-700/70 rounded-full max-w-6xl ml-auto;
+  @apply lg:backdrop-blur-md bg-clip-padding shadow-xl shadow-space-cadet-300/10 dark:shadow-none;
 }
 
 .site-header .content-cont {

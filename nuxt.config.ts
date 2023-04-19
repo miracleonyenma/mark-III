@@ -15,5 +15,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/content", "@vueuse/motion/nuxt"],
+  // image: {
+  //   dir: "assets/img",
+  // },
+  modules: ["@nuxt/content", "@vueuse/motion/nuxt", "@nuxt/image-edge"],
 });
