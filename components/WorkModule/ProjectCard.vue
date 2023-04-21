@@ -12,7 +12,7 @@ const { work } = defineProps<{
     <div class="wrapper">
       <header class="project-card-header">
         <figure class="img-cont">
-          <NuxtImg :src="work.coverImage" />
+          <img :src="work.coverImage" />
         </figure>
         <div class="details">
           <h3 class="title">{{ work.title }}</h3>
