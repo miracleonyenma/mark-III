@@ -26,12 +26,16 @@ const { work } = defineProps<{
 </template>
 <style scoped>
 .project-card {
-  @apply border border-space-cadet-200 dark:border-space-cadet-700 rounded-3xl;
+  @apply h-full border border-space-cadet-200 dark:border-space-cadet-700 rounded-3xl;
   /* @apply border border-vivid-indigo-200 dark:border-vivid-indigo-600 rounded-3xl; */
 }
 
 .project-card > .wrapper {
-  @apply relative;
+  @apply relative h-full;
+}
+
+.project-card-header {
+  @apply flex  h-full;
 }
 
 .project-card .img-cont {
@@ -41,8 +45,8 @@ const { work } = defineProps<{
 }
 
 .project-card .details {
-  @apply relative p-4 pt-64 rounded-b-3xl;
-  @apply bg-gradient-to-t from-white/90 dark:from-space-cadet-900/90 via-space-cadet-50/50  dark:via-space-cadet-800/50 to-space-cadet-100/0 dark:to-space-cadet-700/0;
+  @apply relative self-end p-4 pt-64  rounded-b-3xl;
+  @apply bg-gradient-to-t from-white/90 dark:from-space-cadet-900/90 via-space-cadet-50/60  dark:via-space-cadet-800/60 to-space-cadet-100/0 dark:to-space-cadet-700/0;
   /* @apply bg-gradient-to-t from-vivid-indigo-300/90 dark:from-vivid-indigo/90 via-vivid-indigo-100/50  dark:via-vivid-indigo-600/50 to-vivid-indigo-50/0 dark:to-vivid-indigo-900/0; */
 }
 

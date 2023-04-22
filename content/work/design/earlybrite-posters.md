@@ -1,5 +1,5 @@
 ---
 title: Earlybrite
-description: Poster series and event designs for Earlybrite.
-coverImage: /assets/img/work/designs/sample.jfif
+description: Branding, promotional social media content, slides, and event designs.
+coverImage: /assets/img/work/designs/earlybrite-posters.png
 ---

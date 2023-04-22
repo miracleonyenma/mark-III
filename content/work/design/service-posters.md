@@ -1,5 +1,5 @@
 ---
 title: CPM Cross Rivers
-description: Poster series for the CPM, Cross Rivers State HQ.
-coverImage: /assets/img/work/designs/sample.jfif
+description: Program E-Flyers, service recaps and announcement designs
+coverImage: /assets/img/work/designs/cpm-posters.png
 ---
