@@ -8,7 +8,15 @@ const { category } = defineProps<{
     <ContentList
       :path="`/work${category ? `/${category}` : ``}`"
       :query="{
-        only: ['title', '_path', '_id', 'description', 'coverImage'],
+        only: [
+          'title',
+          '_path',
+          '_id',
+          'description',
+          'coverImage',
+          'cover',
+          'coverBg',
+        ],
         where: [{ _id: { $not: { $contains: 'index' } } }],
       }"
     >
@@ -28,11 +36,11 @@ const { category } = defineProps<{
 </template>
 <style scoped>
 .project-list {
-  @apply flex flex-wrap gap-4;
+  @apply flex flex-wrap gap-8 px-12;
 }
 
 .project-item {
-  @apply w-full md:w-[calc(((1/2)*100%)-(1/2)*1rem)] lg:w-[calc(((1/3)*100%)-(2/3)*1rem)] mt-0;
+  @apply w-full md:w-[calc(((1/2)*100%)-(1/2)*2rem)] lg:w-[calc(((1/3)*100%)-(2/3)*2rem)] mt-0;
 }
 
 .project-item:nth-of-type(2n + 1) {

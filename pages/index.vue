@@ -201,7 +201,7 @@ const workCategories = [
 </template>
 <style scoped>
 .site-hero {
-  @apply relative p-8 py-24 md:mt-32;
+  @apply relative p-8 py-24 md:mt-24;
 }
 
 .site-hero > .wrapper {

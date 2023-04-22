@@ -1,5 +1,5 @@
 ---
 title: Meghee
-description: Poster series and event designs for Meghee Inc.
+description: Social media and E-Flyer designs.
 coverImage: /assets/img/work/designs/meghee-posters.png
 ---
