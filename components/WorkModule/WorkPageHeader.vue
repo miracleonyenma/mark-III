@@ -1,8 +1,74 @@
 <script setup lang="ts">
-const { category } = defineProps({
-  category: {
-    type: String,
-  },
+import { ParsedContent } from "@nuxt/content/dist/runtime/types";
+
+const { category } = defineProps<{
+  category?: Pick<ParsedContent, string> | null;
+}>();
+useHead({
+  title: category?.title || "My work",
+  meta: [
+    {
+      name: "description",
+      content: category?.description || "Selected projects I've worked on",
+      key: "description",
+    },
+    //Open Graph
+    {
+      key: "og-type",
+      property: "og:type",
+      content: "website",
+    },
+    {
+      key: "og-url",
+      property: "og:url",
+      content: `https://v3.miracleio.me${category?._path}`,
+    },
+    {
+      key: "og-title",
+      property: "og:title",
+      content: category?.title,
+    },
+    {
+      key: "og-description",
+      property: "og:description",
+      content: category?.description,
+    },
+    {
+      key: "og-image",
+      property: "og:image",
+      content: `https://v3.miracleio.me${category?.coverImage}`,
+    },
+    //Twitter
+    {
+      key: "twitter-card",
+      property: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      key: "twitter-url",
+      property: "twitter:url",
+      content: `https://miracleio.me${category?._path}`,
+    },
+    {
+      key: "twitter-title",
+      property: "twitter:title",
+      content: category?.title,
+    },
+    {
+      key: "twitter-description",
+      property: "twitter:description",
+      content: category?.description,
+    },
+    {
+      key: "twitter-image",
+      property: "twitter:image",
+      content: `https://v3.miracleio.me${category?.coverImage}`,
+    },
+  ],
+});
+
+console.log({
+  category,
 });
 </script>
 <template>
@@ -10,10 +76,15 @@ const { category } = defineProps({
     <div class="wrapper">
       <section class="work-page-header-content">
         <h1 class="pre-title">My work</h1>
-        <h2 class="title">Selected projects I've worked on</h2>
+        <h2 class="title">
+          Selected {{ category?.title }} projects I've worked on
+        </h2>
         <p class="description">
-          Here are some of the projects I've been fortunate to work on. I've
-          also included some of my personal projects.
+          {{
+            category?.description ||
+            `Here are some of the projects I've been fortunate to work on. I've
+          also included some of my personal projects.`
+          }}
         </p>
       </section>
       <aside class="work-filters wrapper">
@@ -45,6 +116,10 @@ const { category } = defineProps({
 <style scoped>
 .work-page-header > .wrapper {
   @apply flex  flex-wrap md:flex-row justify-between gap-12;
+}
+
+.work-page-header-content .title {
+  @apply capitalize;
 }
 
 .work-filters {

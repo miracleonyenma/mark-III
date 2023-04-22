@@ -36,7 +36,7 @@ const { category } = defineProps<{
 </template>
 <style scoped>
 .project-list {
-  @apply flex flex-wrap gap-8;
+  @apply flex flex-wrap gap-8 px-12;
 }
 
 .project-item {
