@@ -24,6 +24,9 @@ watch(
         <li class="link">
           <NuxtLink to="/snippets">Snippets</NuxtLink>
         </li>
+        <li class="link">
+          <NuxtLink to="/work">Work</NuxtLink>
+        </li>
       </ul>
     </div>
   </nav>
