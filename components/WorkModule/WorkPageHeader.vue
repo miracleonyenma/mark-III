@@ -8,41 +8,43 @@ const { category } = defineProps({
 <template>
   <header class="page-header work-page-header site-section site-section-header">
     <div class="wrapper">
-      <h1 class="pre-title">My work</h1>
-      <h2 class="title">Selected projects I've worked on</h2>
-      <p class="description">
-        Here are some of the projects I've been fortunate to work on. I've also
-        included some of my personal projects.
-      </p>
+      <section class="work-page-header-content">
+        <h1 class="pre-title">My work</h1>
+        <h2 class="title">Selected projects I've worked on</h2>
+        <p class="description">
+          Here are some of the projects I've been fortunate to work on. I've
+          also included some of my personal projects.
+        </p>
+      </section>
+      <aside class="work-filters wrapper">
+        <h3 class="pre-title">Filters</h3>
+        <nav class="filter-nav">
+          <ul class="filter-list">
+            <ContentList
+              :path="`/work`"
+              :query="{
+                only: ['title', '_path', '_id'],
+                where: [{ _id: { $contains: 'index' } }],
+              }"
+            >
+              <template v-slot="{ list }">
+                <li class="filter-item">
+                  <NuxtLink to="/work"> All </NuxtLink>
+                </li>
+                <li v-for="work in list" :key="work._path" class="filter-item">
+                  <NuxtLink :to="work?._path">{{ work.title }}</NuxtLink>
+                </li>
+              </template>
+            </ContentList>
+          </ul>
+        </nav>
+      </aside>
     </div>
-    <aside class="work-filters wrapper">
-      <h3 class="pre-title">Filters</h3>
-      <nav class="filter-nav">
-        <ul class="filter-list">
-          <ContentList
-            :path="`/work`"
-            :query="{
-              only: ['title', '_path', '_id'],
-              where: [{ _id: { $contains: 'index' } }],
-            }"
-          >
-            <template v-slot="{ list }">
-              <li class="filter-item">
-                <NuxtLink to="/work"> All </NuxtLink>
-              </li>
-              <li v-for="work in list" :key="work._path" class="filter-item">
-                <NuxtLink :to="work?._path">{{ work.title }}</NuxtLink>
-              </li>
-            </template>
-          </ContentList>
-        </ul>
-      </nav>
-    </aside>
   </header>
 </template>
 <style scoped>
-.work-page-header {
-  @apply flex flex-wrap md:flex-nowrap justify-between gap-12;
+.work-page-header > .wrapper {
+  @apply flex  flex-wrap md:flex-row justify-between gap-12;
 }
 
 .work-filters {
