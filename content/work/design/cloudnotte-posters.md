@@ -1,5 +1,5 @@
 ---
 title: Cloudnotte
-description: Poster series and event designs for Cloudnotte.
-coverImage: /assets/img/work/designs/sample.jfif
+description: Socials, event designs and brochures.
+coverImage: /assets/img/work/designs/cloudnotte-posters.png
 ---
