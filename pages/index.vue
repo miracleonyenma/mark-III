@@ -89,6 +89,17 @@ const workCategories = [
       "While I mostly work on front end projects I also build fullstack applications using the best tools at my disposal.",
   },
 ];
+
+const { data: home, error } = await useAsyncData("index", async () => {
+  const data = await queryContent("/").findOne();
+
+  return data;
+});
+
+console.log({
+  data: home.value,
+  error: error.value,
+});
 </script>
 <template>
   <main class="site-main">
@@ -106,18 +117,28 @@ const workCategories = [
           </span>
 
           <h1 class="font-heading font-extrabold text-3xl md:text-6xl mb-2">
-            Hey there,
-            <br />
-            I'm Miracle Onyenma
+            <template v-if="home?.caption">
+              {{ home.caption }}
+            </template>
+            <template v-else>
+              Hey there,
+              <br />
+              I'm Miracle Onyenma
+            </template>
           </h1>
           <p ref="heroContentText" class="text-lg md:text-2xl">
-            I'm a Designer and Frontend Developer obsessed with crafting
-            beautiful experiences ✨
+            <template v-if="home?.description">
+              {{ home.description }}
+            </template>
+            <template v-else>
+              I'm a Designer and Frontend Developer obsessed with crafting
+              beautiful experiences ✨
+            </template>
           </p>
           <ul class="socials-links group">
             <!-- <NuxtLink to="" -->
             <li
-              v-for="(link, index) of socialLinks"
+              v-for="(link, index) of home?.socials"
               :key="link.name"
               class="link-item"
               :style="{ transitionDuration: (index + 1) * 0.5 + 's' }"
