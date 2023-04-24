@@ -10,35 +10,21 @@ console.log({
 const { data, error } = await useAsyncData(
   `category-${categorySlug}-${slug}`,
   async () => {
-    const category = await queryContent(
-      `work`,
-      categorySlug as string
-    ).findOne();
+    const categoryQuery = queryContent(`work`, categorySlug as string);
 
-    const project = await queryContent(
-      `work/${categorySlug}`,
-      slug as string
-    ).findOne();
+    const projectQuery = queryContent(`work/${categorySlug}`, slug as string);
+    // https://github.com/nuxt/content/issues/1368
+    // https://github.com/nuxt/content/issues/1368#issuecomment-1191310455
+    const [category, project] = await Promise.all([
+      categoryQuery.findOne(),
+      projectQuery.findOne(),
+    ]);
 
     return { category, project };
   }
 );
 
-console.log({ data: data.value });
-
-// const { data: project, error } = await useAsyncData(
-//   `project-${category}-${slug}`,
-//   async () => {
-//     const project = await queryContent(
-//       `work/${category}`,
-//       slug as string
-//     ).findOne();
-
-//     return project;
-//   }
-// );
-
-// console.log({ data: project.value });
+console.log({ data: data.value, error: error.value });
 </script>
 <template>
   <main class="site-main">
