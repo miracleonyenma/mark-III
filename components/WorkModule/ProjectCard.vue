@@ -72,7 +72,8 @@ const { work } = defineProps<{
 }
 
 .project-card .cover-img {
-  @apply absolute top-0 -left-8 w-[calc(100%+4rem)] object-contain max-w-none;
+  /* @apply absolute top-0 -left-8 w-[calc(100%+4rem)] object-contain max-w-none; */
+  @apply absolute top-0 -left-0 w-full object-contain max-w-none;
 }
 
 .project-card .details {
