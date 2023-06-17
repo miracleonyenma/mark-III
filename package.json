@@ -25,6 +25,7 @@
     "@nuxt/content": "^2.6.0",
     "@phosphor-icons/vue": "^2.1.4",
     "@vueuse/motion": "^2.0.0-beta.29",
+    "nuxt-umami": "^2.4.3",
     "query-string": "^8.1.0",
     "reading-time": "^1.5.0",
     "request": "^2.88.2",

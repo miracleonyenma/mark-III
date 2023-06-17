@@ -142,6 +142,7 @@ console.log({
               :key="link.name"
               class="link-item"
               :style="{ transitionDuration: (index + 1) * 0.5 + 's' }"
+              @pointerover=""
             >
               <NuxtLink
                 :to="link.url"
