@@ -19,4 +19,5 @@ export default defineNuxtConfig({
   //   dir: "assets/img",
   // },
   modules: ["@nuxt/content", "@vueuse/motion/nuxt", "@nuxt/image-edge"],
+  extends: ["nuxt-umami"],
 });
