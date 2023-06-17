@@ -7,13 +7,13 @@ import {
   SwatchIcon,
 } from "@heroicons/vue/24/solid";
 import { useMotion } from "@vueuse/motion";
-// import {
-//   PhTwitterLogo,
-//   PhLinkedinLogo,
-//   PhGithubLogo,
-//   PhDribbbleLogo,
-//   PhReadCvLogo,
-// } from "@phosphor-icons/vue";
+import {
+  PhTwitterLogo,
+  PhLinkedinLogo,
+  PhGithubLogo,
+  PhDribbbleLogo,
+  PhReadCvLogo,
+} from "@phosphor-icons/vue/compact";
 const specialGreeting = useSpecialGreeting();
 
 const heroContent = ref();
@@ -41,33 +41,33 @@ const socialLinks = [
   {
     name: "Twitter",
     url: "https://twitter.com/miracleio",
-    // icon: PhTwitterLogo,
+    icon: PhTwitterLogo,
     text: "TW",
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/miracleio",
-    // icon: PhLinkedinLogo,
+    icon: PhLinkedinLogo,
     text: "LN",
   },
   {
     name: "GitHub",
     url: "https://github.com/miracleonyenma",
-    // icon: PhGithubLogo,
+    icon: PhGithubLogo,
     text: "GH",
   },
 
   {
     name: "Dribbble",
     url: "https://dribbble.com/miracleio",
-    // icon: PhDribbbleLogo,
+    icon: PhDribbbleLogo,
     text: "DR",
   },
 
   {
     name: "My Resume",
     url: "https://docs.google.com/document/d/1jqlXD4OjNMssz_IBJOe7NuKp8uQaYRs5_3XK-6_lf4Y/edit?usp=sharing",
-    // icon: PhReadCvLogo,
+    icon: PhReadCvLogo,
     text: "CV",
   },
 ];
@@ -150,7 +150,33 @@ console.log({
                 class="social-link"
               >
                 <!-- <component :is="link.icon" weight="fill" class="icon w-8 h-8" /> -->
-                <span>{{ link.text }}</span>
+
+                <PhDribbbleLogo
+                  v-if="link.text == 'DR'"
+                  weight="fill"
+                  class="icon w-8 h-8"
+                />
+                <PhGithubLogo
+                  v-else-if="link.text == 'GH'"
+                  weight="fill"
+                  class="icon w-8 h-8"
+                />
+                <PhLinkedinLogo
+                  v-else-if="link.text == 'LN'"
+                  weight="fill"
+                  class="icon w-8 h-8"
+                />
+                <PhTwitterLogo
+                  v-else-if="link.text == 'TW'"
+                  weight="fill"
+                  class="icon w-8 h-8"
+                />
+                <PhReadCvLogo
+                  v-else-if="link.text == 'CV'"
+                  weight="fill"
+                  class="icon w-8 h-8"
+                />
+                <span v-else>{{ link.text }}</span>
               </NuxtLink>
             </li>
           </ul>
@@ -222,7 +248,7 @@ console.log({
 </template>
 <style scoped>
 .site-hero {
-  @apply relative p-8 py-24 md:mt-24;
+  @apply relative p-8 py-12 md:py-24 md:mt-24;
 }
 
 .site-hero > .wrapper {

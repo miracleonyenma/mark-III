@@ -82,6 +82,12 @@ useHead({
         <p class="description">
           {{ project?.summary || project?.description }}
         </p>
+
+        <ul class="project-links">
+          <li v-if="project?.github" class="project-link-item github">
+            <NuxtLink :to="project?.github"> </NuxtLink>
+          </li>
+        </ul>
       </section>
     </div>
   </header>

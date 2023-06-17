@@ -35,7 +35,7 @@ const articleItemMotionInstance = useMotion(articleItem, {
       </ul>
       <!-- create a slot with the name 'article-details' -->
       <slot name="article-details">
-        <ArticleDetails :article="article" />
+        <ArticleModuleArticleDetails :article="article" />
       </slot>
     </header>
   </article>

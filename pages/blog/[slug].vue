@@ -1,4 +1,6 @@
 <script setup>
+import ArticlePage from "~/components/ArticleModule/ArticlePage.vue";
+
 const route = useRoute();
 const slug = ref(route.params.slug);
 

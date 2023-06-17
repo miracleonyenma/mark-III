@@ -1,10 +1,15 @@
 .links-group {
-  @apply grid grid-cols-3 bg-space-cadet-50 dark:bg-space-cadet-800 border border-space-cadet-200 dark:border-space-cadet-700 p-8 rounded-3xl;
+  @apply flex flex-wrap gap-4 bg-space-cadet-50 dark:bg-space-cadet-800 border border-space-cadet-200 dark:border-space-cadet-700 p-8 rounded-3xl;
 }
+
+.links-group__item {
+  @apply grow;
+}
+
 .links-group .heading {
   @apply font-semibold font-heading text-lg mb-2;
 }
 
 .links {
-  @apply flex flex-col gap-1;
+  @apply grow flex flex-wrap gap-3;
 }

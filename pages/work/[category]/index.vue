@@ -21,7 +21,7 @@ console.log({ data: data.value });
 </script>
 <template>
   <main class="site-main">
-    <WorkPageHeader :category="data?.category" />
+    <WorkModuleWorkPageHeader :category="data?.category" />
     <section class="site-section">
       <div class="wrapper">
         <WorkModuleProjectList :category="categorySlug" />

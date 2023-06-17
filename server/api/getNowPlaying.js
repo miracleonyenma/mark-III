@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
       body: data,
     };
   } catch (error) {
-    console.error("getNowPlayingFile", error);
+    // console.error("getNowPlayingFile", error);
 
     throw createError({
       statusCode: 500,

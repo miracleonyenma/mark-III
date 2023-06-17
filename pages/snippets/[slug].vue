@@ -1,4 +1,6 @@
 <script setup>
+import ArticlePage from "~/components/ArticleModule/ArticlePage.vue";
+
 const route = useRoute();
 const slug = ref(route.params.slug);
 
@@ -14,12 +16,7 @@ const { data, error } = await useAsyncData(
       surround = await queryContent()
         .only(["_path", "title", "description", "createdAt"])
         .where({
-          _path: {
-            test: (path) => {
-              console.log({ path });
-              return path.startsWith("/snippets");
-            },
-          },
+          _path: { $regex: "snippets" },
         })
         .sort({ createdAt: -1 })
         .findSurround(`/snippets/${slug.value}`);

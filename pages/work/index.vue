@@ -8,7 +8,7 @@ const queryFromPath = (path: string) =>
 </script> -->
 <template>
   <main class="site-main">
-    <WorkPageHeader />
+    <WorkModuleWorkPageHeader />
     <section class="site-section">
       <div class="wrapper">
         <WorkModuleProjectList />
