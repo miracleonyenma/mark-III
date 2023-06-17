@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ArticleListItem from "~/components/ArticleModule/ArticleListItem.vue";
+
 const isChristmas = useIsChristmas();
 const specialGreeting = useSpecialGreeting();
 const snippetsPath = ref("/snippets");

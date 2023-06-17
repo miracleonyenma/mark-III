@@ -1,3 +1,12 @@
+<script setup lang="ts">
+import { useSiteNavLinks } from "~/composables/useSiteNavLinks";
+
+const siteNavLinks = useSiteNavLinks();
+
+console.log({
+  siteNavLinks: siteNavLinks.value,
+});
+</script>
 <template>
   <footer class="site-footer site-section">
     <div class="wrapper">
@@ -14,21 +23,23 @@
           Have a great {{ getTimeGreeting() }}
         </div>
 
-        <SpotifyNow />
+        <SpotifyModuleSpotifyNow />
       </section>
       <section class="footer-section links-group">
-        <div class="group site-group">
+        <div class="links-group__item site-group">
           <h3 class="heading">Site</h3>
           <ul class="links">
-            <li class="link" title="Home">
-              <NuxtLink to="/">Home</NuxtLink>
-            </li>
-            <li class="link" title="Blog">
-              <NuxtLink to="/blog">Blog</NuxtLink>
+            <li
+              v-for="link in siteNavLinks"
+              :key="link.path"
+              class="link"
+              title="Home"
+            >
+              <NuxtLink :to="link.path">{{ link.text }}</NuxtLink>
             </li>
           </ul>
         </div>
-        <div class="group socials-group">
+        <div class="links-group__item socials-group">
           <h3 class="heading">Socials</h3>
           <ul class="links">
             <li class="link" title="Twitter">
@@ -74,6 +85,6 @@
   @apply flex flex-col gap-4 lg:gap-8;
 }
 .top-section {
-  @apply flex flex-col md:flex-row justify-between gap-4 w-full max-w-6xl m-auto;
+  @apply flex flex-col md:flex-row md:items-center justify-between gap-4 w-full max-w-6xl m-auto;
 }
 </style>

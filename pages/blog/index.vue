@@ -69,7 +69,7 @@ const articleSlug = (path: string) => {
                 class="list-item"
               >
                 <NuxtLink :to="article._path.replace('articles', 'blog')">
-                  <ArticleListItem :article="article" />
+                  <ArticleModuleArticleListItem :article="article" />
                 </NuxtLink>
               </li>
             </ul>

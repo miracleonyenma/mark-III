@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { Bars2Icon, Bars3Icon } from "@heroicons/vue/24/solid/index";
+import { Bars2Icon, Bars3Icon, XMarkIcon } from "@heroicons/vue/24/solid/index";
+import { useSiteNavLinks } from "~/composables/useSiteNavLinks";
 const route = useRoute();
 const navActive = ref(false);
+
+const navLinks = useSiteNavLinks();
+
+// create a function to toggle the nav
 const toggleNav = () => {
   navActive.value = !navActive.value;
 };
@@ -18,14 +23,13 @@ watch(
   <nav class="site-nav" :class="{ active: navActive }">
     <div class="wrapper">
       <ul class="links">
-        <li class="link">
-          <NuxtLink to="/blog">Blog</NuxtLink>
-        </li>
-        <li class="link">
-          <NuxtLink to="/snippets">Snippets</NuxtLink>
-        </li>
-        <li class="link">
-          <NuxtLink to="/work">Work</NuxtLink>
+        <li v-for="link in navLinks" :key="link.path" class="link">
+          <NuxtLink
+            v-if="link.path !== '/'"
+            :to="link.path"
+            :class="{ 'router-link-active': route.path.startsWith(link.path) }"
+            >{{ link.text }}</NuxtLink
+          >
         </li>
       </ul>
     </div>
@@ -35,7 +39,8 @@ watch(
       @click="toggleNav"
       class="site-nav-btn cta bg-space-cadet-50 dark:bg-space-cadet-900 py-2 shadow-lg"
     >
-      <Bars3Icon class="icon w-6 h-6" />
+      <XMarkIcon v-if="navActive" class="icon w-6 h-6" />
+      <Bars3Icon v-else class="icon w-6 h-6" />
     </button>
   </div>
 </template>
@@ -71,7 +76,7 @@ watch(
 }
 
 .link > a.router-link-active {
-  @apply text-space-cadet-800 dark:text-space-cadet-100;
+  @apply md:font-semibold text-space-cadet-800 dark:text-space-cadet-100;
 }
 
 .site-nav-action-cont {

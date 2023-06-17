@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ArticleDetails from "./ArticleDetails.vue";
+
 const { article } = defineProps({
   article: {
     type: Object,

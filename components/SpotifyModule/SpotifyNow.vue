@@ -30,10 +30,10 @@ console.log({ audio });
 
 const togglePreview = () => {
   if (isPreviewPlaying.value) {
-    audio.value.pause();
+    audio?.value.pause();
     isPreviewPlaying.value = false;
   } else {
-    audio.value.play();
+    audio?.value.play();
     isPreviewPlaying.value = true;
   }
 };
@@ -145,7 +145,7 @@ onBeforeUnmount(() => {
   @apply overflow-auto;
 }
 .spotify-now > .wrapper {
-  @apply flex items-center p-3 h-full;
+  @apply flex items-center p-6 h-full;
 }
 .playing-cover {
   @apply relative shrink-0;

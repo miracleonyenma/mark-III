@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "ms-vscode.vscode-typescript-next",
+        "rangav.vscode-thunder-client",
+        "github.codespaces",
+        "github.copilot",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "wakatime.vscode-wakatime",
+        "davidanson.vscode-markdownlint",
+        "enkia.tokyo-night"
+    ]
+}

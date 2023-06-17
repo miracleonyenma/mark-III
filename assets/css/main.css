@@ -76,7 +76,7 @@ body {
   } */
 
   .page-header > .wrapper > * {
-    @apply max-w-xl;
+    @apply max-w-3xl;
   }
 
   .page-header .title {
@@ -85,11 +85,11 @@ body {
   /* blog */
 
   .articles-page-header {
-    @apply p-4 my-12 lg:mt-44;
+    @apply p-4  my-12 lg:mt-44;
   }
 
   .articles-page-header > .wrapper {
-    @apply w-full max-w-4xl m-auto;
+    @apply px-6 w-full max-w-4xl m-auto;
   }
 
   .articles-list-section .articles-list {
