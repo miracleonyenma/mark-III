@@ -18,6 +18,11 @@ export default defineNuxtConfig({
   // image: {
   //   dir: "assets/img",
   // },
-  modules: ["@nuxt/content", "@vueuse/motion/nuxt", "@nuxt/image-edge"],
+  modules: [
+    "@nuxt/content",
+    "@vueuse/motion/nuxt",
+    "@nuxt/image-edge",
+    "@nuxthq/studio",
+  ],
   extends: ["nuxt-umami"],
 });
