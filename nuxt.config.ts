@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt",
     "@nuxt/image-edge",
     "@nuxthq/studio",
+    "@vue-email/nuxt",
   ],
   extends: ["nuxt-umami"],
 });
