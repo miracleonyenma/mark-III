@@ -3,6 +3,8 @@ const isChristmas = useIsChristmas();
 const isNewYear = useIsNewYear();
 
 const siteThemeCookie = useCookie("site-theme");
+console.log({ siteThemeCookie });
+
 const theme = useSiteTheme();
 const setTheme = useSetSiteTheme;
 setTheme(siteThemeCookie.value || "dark");
@@ -12,7 +14,6 @@ const specialGreeting = useSpecialGreeting();
 const metaTitle = ref(specialGreeting || "Miracleio");
 
 // console.log({isChristmas});
-
 
 useHead({
   titleTemplate: (titleChunk) => {
@@ -87,7 +88,7 @@ useHead({
     },
   ],
   htmlAttrs: {
-    class: theme.value === "dark" ? "dark" : "light",
+    class: theme.value,
   },
 });
 </script>
